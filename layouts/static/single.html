@@ -1,0 +1,22 @@
+{{ partial "header" . }}
+<body>
+    <div id="invmode">Invert mode</div>
+
+    {{ partial "nav" . }}
+    {{ partial "breadcrumbs" . }}
+
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Site.Params.authorPortrait }}
+    <div class="portrait">
+    <img src="{{ .Site.BaseURL }}/images/another.jpg"
+    class="img-circle" alt="Portrait"/>
+    </div>
+    {{ end }}
+
+    <div id="content">
+    {{ .Content }}
+    </div>
+
+    <hr>
+</body>

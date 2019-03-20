@@ -1,0 +1,19 @@
+{{ partial "header" . }}
+<body>
+    <div id="invmode">Invert mode</div>
+    {{ partial "nav" . }}
+    <ul>
+    {{ $baseurl := .Site.BaseURL }}
+    {{ $data := .Data }}
+    {{ range $key,$value := .Data.Terms.ByCount }}
+      <li>
+        <a href="{{ $baseurl }}{{ $data.Plural }}/{{ $value.Name | urlize }}">
+          {{ $value.Name }} -
+          {{ $value.Count }} post{{if lt 1 $value.Count }}s{{ end }}</div>
+        </a>
+      </li>
+    {{ end }}
+    </ul>
+
+{{ partial "footer" . }}
+</body>

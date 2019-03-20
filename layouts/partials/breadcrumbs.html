@@ -1,0 +1,21 @@
+<!-- Source:
+https://discourse.gohugo.io/t/implementing-breadcrumb-navigation-in-hugo/1048/38
+-->
+
+<ol class="breadcrumbs">
+  {{ template "breadcrumb" dict "currentPage" .Page "id" .UniqueID }}
+</ol>
+
+<!-- templates -->
+{{ define "breadcrumb" }}
+  {{ if .currentPage.Parent }}
+    {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+  {{ end }}
+  <li>
+    {{ if eq .id .currentPage.UniqueID }}
+      <a href="{{ .currentPage.URL }}">{{ .currentPage.Title | truncate 20 }}</a>
+    {{ else }}
+      <a href="{{ .currentPage.URL }}">{{ .currentPage.Title }}</a>
+    {{ end }}
+  </li>
+{{ end }}

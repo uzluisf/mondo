@@ -1,0 +1,39 @@
+{{ partial "header" . }}
+<body>
+    <div id="invmode">Invert mode</div>
+    {{ partial "nav" . }}
+    {{ partial "breadcrumbs" . }}
+
+    <h1>{{ .Title }}</h1>
+    <div id="content">
+    {{ .Content }}
+    </div>
+    <hr>
+   
+    {{ if .Params.date }}
+    Posted: {{ .Date.Format "Jan 02, 2006" }}.
+    {{ if .Params.updated }} Updated: {{ .Date.Format "Jan 02, 2006" }}. {{end}}
+    <br/>
+    {{end}}
+    
+    {{ if .Params.tags }}
+        Tags:
+        {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, 
+        {{ end }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+        <br/>
+    {{end}}
+
+    {{ if .Site.Params.showNextPrevPage }}
+        {{ if .PrevPage }}← <a class="right" href="{{ .PrevPage.Permalink }}" rel="next">
+            <span>{{ .PrevPage.Title }}</span>
+            </a><br/>
+        {{ end }}
+
+        {{ if .NextPage }}→ <a class="left" href="{{ .NextPage.Permalink }}" rel="prev">
+            <span>{{ .NextPage.Title }}</span>
+            </a><br/>
+        {{ end }}
+    {{ end }}
+    {{ partial "footer" .}}
+</body>

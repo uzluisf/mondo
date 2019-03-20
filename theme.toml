@@ -1,0 +1,18 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Mondo"
+license = "MIT"
+licenselink = "http://opensource.org/licenses/MIT"
+description = "A Hugo theme without warranties."
+homepage = "https://github.com/uzluisf/iarp"
+tags = ["blog", "personal"]
+min_version = "0.01"
+
+[author]
+    name = "Luis F. Uceta"
+    homepage = "uzluisf.gitlab.io"
+
+[original]
+    name = "Motherfucking Theme"
+    homepage = "https://blog.kingdomofmysteries.xyz/"
