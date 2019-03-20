@@ -1,0 +1,2 @@
+# mondo
+A Hugo theme
