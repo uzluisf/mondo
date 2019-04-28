@@ -4,10 +4,10 @@
 name = "Mondo"
 license = "MIT"
 licenselink = "http://opensource.org/licenses/MIT"
-description = "A Hugo theme without warranties."
-homepage = "https://github.com/uzluisf/iarp"
+description = "A simple Hugo theme without warranties."
+homepage = "https://github.com/uzluisf/mondo"
 tags = ["blog", "personal"]
-min_version = "0.01"
+min_version = "0.02"
 
 [author]
     name = "Luis F. Uceta"
