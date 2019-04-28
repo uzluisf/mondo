@@ -1,19 +1,22 @@
-{{ partial "header" . }}
+{{ partial "head" . }}
+
 <body>
-    <div id="invmode">Invert mode</div>
-    {{ partial "nav" . }}
     {{ partial "breadcrumbs" . }}
 
     <h1>{{ .Title }}</h1>
+
     <div id="content">
-    {{ .Content }}
+        {{ .Content }}
     </div>
+
     <hr>
    
     {{ if .Params.date }}
-    Posted: {{ .Date.Format "Jan 02, 2006" }}.
-    {{ if .Params.updated }} Updated: {{ .Date.Format "Jan 02, 2006" }}. {{end}}
-    <br/>
+        Posted: {{ .Date.Format "Jan 02, 2006" }}
+        {{ if .Params.updated }}
+        ✱ Updated: {{ dateFormat "Jan 02, 2006" .Params.updated }}
+        {{end}}
+        ✱
     {{end}}
     
     {{ if .Params.tags }}
@@ -35,5 +38,6 @@
             </a><br/>
         {{ end }}
     {{ end }}
-    {{ partial "footer" .}}
+
+    {{ partial "footer" . }}
 </body>

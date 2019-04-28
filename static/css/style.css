@@ -1,25 +1,159 @@
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+/* 
+START NORMALIZE
+normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+*/
 
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+/* END NORMALIZE */
+
+@import url('fonts/Lora/stylesheet.css');
+@import url('fonts/Noto/stylesheet.css');
+@import url('fonts/Inconsolata/stylesheet.css');
+
+body{
+	max-width: 45em;
+	line-height:1.6;
+	font-size:18px;
+	padding:0 10px;
+	background-color: #f8f8f8;
+	color:#181818;
+    font-family: 'Noto Sans', sans-serif;
+	margin:40px auto;
+    margin-top: 20px;
+}
 blockquote {
-	background: #f9f9f9;
-	border-left: 10px solid #ccc;
-	margin: 1.5em 10px;
+	background: #ededed;
+	border-left: 10px solid #dedede;
+	margin: 1.5em 1px;
 	padding: 0.5em 10px;
 }
 blockquote p {
 	display: inline;
-}
-body{
-	background-color: #F0F0F0;
-    font-family: 'Noto Sans', sans-serif;
-	margin:40px auto;
-    margin-top: 20px;
-	max-width: 850px;
-	line-height:1.6;
-	font-size:18px;
-	color:#222;
-	padding:0 10px
 }
 p {
     font-family: "Lora", "Georgia", "Times New Roman", serif;
@@ -27,14 +161,35 @@ p {
     font-size: 120%;
     margin: 1.6rem 0 1.6rem 0
 }
+h1 {
+    font-size: 1.6em;
+}
+h2 {
+    font-size: 1.4em;
+}
+h3 {
+    font-size: 1.2em;
+}
+h4 { 
+    font-size: 1em;
+}
+h5 {
+    font-size: 0.8em;
+}
+h6 { 
+    font-size: 0.6em;
+}
+b, strong {
+    font-weight: bolder;
+}
 aside{
 	font-style: italic;
 }
-a:visited{
-	color:#222;
+a:visited, a:link {
+	color:#181818;
 }
-a:link{
-	color:#222;
+a:hover {
+	color:#05a;
 }
 #navbar {
     text-align: center;
@@ -42,6 +197,7 @@ a:link{
     margin-bottom: 1rem;
 }
 div.site-title {
+    color: #181818;
     text-align: center;
     display: block;
     margin-top: 0.67em;
@@ -51,10 +207,12 @@ div.site-title {
 }
 span.site-name {
     font-size: 2em;
-    font-weight: bold;
+    font-weight: bolder;
+    text-transform:uppercase;
 }
 span.site-description { }
-h1,h2,h3,h4,div.site-title{
+h1,h2,h3,h4 {
+    color: #0055aa;
 	line-height:1.2;
 	font-family:sans-serif;
 }
@@ -70,24 +228,37 @@ span.content{
 	text-decoration: underline;
 }
 table {
+    border-collapse: collapse;
+    border-spacing: 0;
 	width: 100%;
 	margin: 0 auto;
-	border-collapse: collapse;
-	border: 1px solid black;
 }
 td, th {
-	padding-left: 5px;
-	padding-right: 5px;
-	border-left: 1px solid black;
-}
-th {
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+    line-height: 20pt;
 }
 .center {
 	text-align: center;
 }
-
+ul.page-list {
+    list-style:none;
+}
+ul.page-list {
+    margin-top:50px;
+}
+ul.page-list a, ul.page-list a:hover {
+    color: #181818;
+    text-decoration:none;
+}
+ul.page-list li:before {
+    content: '»';
+    margin-left: -40px;
+    margin-right: 10px;
+}
+ul.page-list a:hover {
+    color: #05a;
+}
 ul.pagination {
 	display: inline-block;
 	margin: 0;
@@ -111,14 +282,12 @@ ul.pagination li:not(.disabled) a {
 	border-radius: 5px;
 	padding: 8px 16px;
 }
-ul.pagination li.active a {
-	color: white;
-	background-color: black;
-}
 ul.pagination li:not(.active):not(.disabled) a:hover {
 	background-color: #ddd;
 }
-
+h1, #content h1, #content h2, #content h3 {
+    color: #0055aa;
+}
 #content h2 .anchor, #content h3 .anchor {
    text-decoration: none;
    position: absolute;
@@ -129,7 +298,8 @@ ul.pagination li:not(.active):not(.disabled) a:hover {
 }
 
 #content h2 .anchor:hover, #content h3 .anchor:hover { color: #333; }
-#content .anchor:hover { text-decoration: underline; }
+#content a { color: #181818; }
+#content a:hover { color: #05a; }
 
 /** Breadcrumbs links 
  CSS from http://anmorris.org/
@@ -153,15 +323,16 @@ ul.pagination li:not(.active):not(.disabled) a:hover {
     color: #0a0a0a;
     cursor: default;
     text-transform: uppercase; }
-    .breadcrumbs li:not(:last-child)::after {
+    .breadcrumbs li:not(:nth-last-child(2))::after {
       position: relative;
       margin: 0 0.75rem;
       opacity: 1;
       content: "/";
       color: #cacaca; }
   .breadcrumbs a {
-    color: #0050A0; }
+    color: #181818; }
     .breadcrumbs a:hover {
+      color: #05a;
       text-decoration: underline; }
   .breadcrumbs .disabled {
     color: #cacaca;
@@ -169,16 +340,30 @@ ul.pagination li:not(.active):not(.disabled) a:hover {
   ol { 
   padding-left:0;
   list-style-position:inside; }
+.breadcrumbs li:last-child#invmode {
+    display: block;
+    cursor:pointer;
+    color: #181818;
+    float: right;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.breadcrumbs li:last-child::after {
+    content:none;
+}
 /** END **/
 
 /* Code */
 pre code {
    line-height: 1.5em;
-   font-family: 'Inconsolata', Courier, monospace, sans-serif;
+   font-family: 'Inconsolata', monospace, sans-serif;
    font-size: 115%;
 }
 pre {
-  background: #e7e7e7;
+  background: #efefef;
   text-align: left;
   padding: 0.5em;
   padding-left: .8em;
@@ -187,11 +372,12 @@ pre {
   /*overflow: auto;*/
   tab-size: 4;
   margin-bottom: 20px;
-  border-left: 5px solid #9c9c9c;
+  border-left: 5px solid #9bc2e9;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
 code {
+  font-family: 'Inconsolata', monospace, sans-serif;
   padding: 0em;
   text-align: left;
   color: #000;
@@ -201,7 +387,7 @@ code {
   position: relative;
 }
 .code-content code[class*="language-"]::before{
-  isplay:none;
+  display:none;
   content:attr(data-lang);
   position:absolute;
   font-size:.75em;
@@ -225,101 +411,89 @@ p > code, li > code {
 }
 /* END */
 
-div#invmode {
-  color: #181818;
-  background-color: #DBD8D8;
-  border-radius: 3px;
-  top: 34px;
-  padding: 2px 5px;
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  font-size: .8em;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .portrait, .img-circle {
-    width: 250px;
-    height: 250px;
-
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0px auto;
+    margin-top: 50px;
 }
-
 .img-circle {
     display: block;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
     margin: 0 auto;
-    border: 2px solid #0a0a0a;
-    border-radius: 50%;
+    border-radius: 5%;
 }
 
 /* Dark Mode CSS */
-html.dark body { background: #151B2D; color: #e0e0e0; }
-   html.dark  #invmode { background: #252539 ; color: #e0e0e0; }
-   html.dark .page-list { color: #fff; }
-   html.dark h2.date { color: #fff; }
-   html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
-       color: #fff;
+html.dark body { background: #1e1e1e; color: #e7e5e7; }
+   html.dark h1, html.dark h2, html.dark h3, html.dark h4,
+   html.dark #content h1, html.dark #content h2, html.dark #content h3,
+   html.dark #content h4 {
+       color: #7ac4f2
    }
-   html.dark .page-list a:link, 
-   html.dark .page-list a:hover,
-   html.dark .page-list a:visited { color: #ad71bc; }
-   html.dark .img-circle  { border: 2px solid #6b73db; }
+   html.dark b, html.dark strong { color: #ece9f2 }
+   html.dark .page-list { color: #fff; }
+   html.dark .page-list a:hover { color:#7ac4f2; }
+   html.dark .img-circle  { border: 1px solid rgba(0, 0, 0, 0.05); }
    html.dark pre {
-       background: #252539;
-       border-left: 5px solid #151b2d;
+       background: #232323;
+       border-left: 5px solid #9bc2e9;
    }
    html.dark code { color: #fff; }
    html.dark p > code,
-   html.dark li > code { border: 1px solid #374677; }
-   html.dark .listingblock:hover code[class*="language-"]::before { color: #3d4e86; }
+   html.dark li > code { border: 1px solid #f8f8f8; }
+   html.dark .listingblock:hover code[class*="language-"]::before { color: #e7e5e7; }
    html.dark button {
     background: #252539;
     border-bottom: 2px solid #434367;
    }
    html.dark th, html.dark td {
-    border-bottom: 1px solid #25253900;
-   }
-   html.dark table th {
-    background: #252539;
+    border-bottom: 1px solid #292929;
    }
    html.dark .footer,
    html.dark .footer a {color: #6b73db;}
    html.dark .footer {
     border-top: 1px #374677 solid;
    }
-    html.dark a, ul li a {
-    color: #6b73db;
+    html.dark #content a, html.dark a, html.dark .breadcrumbs a,
+    html.dark ul.pagination li.active a, html.dark .breadcrumbs li#invmode {
+      color: #e7e5e7
    }
-   html.dark .breadcrumbs a {
-    color: #6b73db
-    }
+   html.dark .breadcrumbs li a:hover,
+   html.dark #content a:hover {
+    color: #7ac4f2;
+   }
    html.dark .breadcrumbs ol li > a:hover {
-    border-bottom: 2px dotted #ad71bc;
+    border-bottom: 2px dotted #7ac4f2;
    }
    html.dark blockquote {
-    border-left: 5px solid #374677;
-    background: #151B2D;
+    border-left: 5px solid #181818;
+    background: #202020;
    }
-   html.dark #navbar, html.dark hr {
-    border-bottom:1px solid  #6b73db;
+   html.dark div.site-title {
+       color: #e7e5e7;
    }
-   html.dark ul.pagination li.active a {
-	color: black;
+   html.dark #navbar {
+    border-bottom: thin solid #e7e5e7;
    }
    html.dark ul.pagination li.active a,
    html.dark ul.pagination li:not(.active):not(.disabled) a:hover {
-	background-color: #6b73db;
+	/**background-color: #6b73db;**/
    }
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 100%;
+    }
+    h1, h2, h3, h4 {
+        font-size: 1.2em;
+    }
+}
 @media print {
     body {
         font-size: 12pt;
     }
-    
     #invmode, .breadcrumbs, .anchor {
         display: none;
     }

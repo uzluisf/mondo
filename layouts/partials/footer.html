@@ -1,3 +1,5 @@
 <footer>
-{{ partial "mathjax.html" . }}
+    {{ if .Params.include_math }}
+    {{ partial "mathjax.html" . }}
+    {{ end }}
 </footer>

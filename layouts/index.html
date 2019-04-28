@@ -1,6 +1,22 @@
-{{ partial "header" . }}
+{{ partial "head" . }}
+
 <body>
-    <div id="invmode">Invert mode</div>
     {{ partial "nav" . }}
-    {{ .Content }}
+
+    {{ if .Site.Params.description }}
+    <p>{{ .Site.Params.description }}</p>
+    {{ end }}
+
+    <div class="home-list">
+        <!-- {{ $currentPage := . }} -->
+        <ul>
+        {{ range .Site.Menus.main }}
+        <li>
+            <p><a style="text-transform:lowercase" href="{{ .URL }}">{{ .Identifier }}/</a> 
+            {{ if .Name }} — {{ .Name }} {{ end }}</p>
+        </li>
+        {{ end }}
+        </ul>
+    </div>
+
 </body>

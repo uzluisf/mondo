@@ -1,6 +1,7 @@
-{{ partial "header" . }}
+<!-- Tags page -->
+{{ partial "head" . }}
+
 <body>
-    <div id="invmode">Invert mode</div>
     {{ partial "nav" . }}
     <ul>
     {{ $baseurl := .Site.BaseURL }}
@@ -15,5 +16,5 @@
     {{ end }}
     </ul>
 
-{{ partial "footer" . }}
+    {{ partial "footer" . }}
 </body>

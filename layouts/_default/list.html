@@ -1,16 +1,13 @@
-{{ partial "header" . }}
-<body>
-    <div id="invmode">Invert mode</div>
-    {{ partial "nav" . }}
-    {{ partial "breadcrumbs" . }}
-    <ul class="page-list">
-	{{ range .Paginator.Pages }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-	{{ end }}
-    </ul>
-    <div class="center">
-    {{ template "_internal/pagination.html" . }}
-    </div>
+{{ partial "head" . }}
 
-{{ partial "footer" . }}
+<body>
+    {{ partial "breadcrumbs" . }}
+
+    <ul class="page-list">
+	    {{ range .Paginator.Pages }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+	    {{ end }}
+    </ul>
+
+    {{ partial "footer" . }}
 </body>
