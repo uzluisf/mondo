@@ -1,0 +1,45 @@
+baseURL        = "http://example.org/"
+contentdir     = "content"
+layoutdir      = "layouts"
+publishdir     = "public"
+canonifyurls   = true
+paginate       = 20
+metaDataFormat = "yaml"
+
+theme = "mondo"
+title = "Mondo"
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+
+[params]
+    author = "Author"
+    keywords = "blog, personal"
+    description = "Welcome to my personal website."
+
+    # portrait in About section. Place image at static/images/
+    authorPortrait = "avatar.png"
+
+    # show next/previous page in Blog section
+    # showNextPrevPage = true
+
+    # Enable Mathjax by including `include_math = true` in page's yaml
+
+    # Indicate last updated by including `updated = DATE`  in page's yaml
+
+[[menu.main]]
+    identifier = "About"
+    name = "Some information about me."
+    weight = 1
+    url = "/about/"
+
+[[menu.main]]
+    identifier = "Posts"
+    name = "Wondering what’s new?"
+    weight = 2
+    url  = "/posts/"
+
+[[menu.main]]
+    identifier = "Tags"
+    weight = 3
+    url  = "/tags/"
